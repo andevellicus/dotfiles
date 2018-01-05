@@ -1,0 +1,18 @@
+[user]
+	email = j.vargas.machaj@gmail.com
+	name = andevellicus
+
+[diff]
+	tool = vimdiff
+
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+
+[merge]
+	tool = vimdiff
+
+[mergetool "vimdiff"]
+	cmd = vim -d "$LOCAL" "$MERGED" "$REMOTE"
+	trustExitCode = true
