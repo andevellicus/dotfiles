@@ -5,7 +5,10 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+
+#[[ -z "$TMUX" ]] && exec tmux
+
+[ -z "$TMUX"  ] && { tmux attach || tmux new-session;}
 
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
