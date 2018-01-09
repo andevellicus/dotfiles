@@ -4,6 +4,11 @@ set number
 set encoding=utf-8
 " Enable syntax
 syntax enable
+let python_highlight_all=1
+
+set incsearch
+set splitright
+set splitbelow
 
 " Enable folding
 set foldmethod=indent
@@ -28,7 +33,15 @@ au BufNewFile,BufRead *.py
     \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
+    \ set smartindent |
     \ set fileformat=unix
+
+" Full stack indendtation
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
 
 " Plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -43,6 +56,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
