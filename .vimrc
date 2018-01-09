@@ -1,5 +1,8 @@
 " Show line numbers
 set number
+" Set encoding
+set encoding=utf-8
+" Enable syntax
 syntax enable
 
 " Enable folding
@@ -7,18 +10,17 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-let g:solarized_termcolors = 256
-let g:solarized_termtrans  = 1
+" Themes
 set background=dark
 colorscheme solarized
-"colorscheme default
+let g:solarized_termcolors = 256
+let g:solarized_termtrans  = 1
+hi SignColumn ctermbg=NONE
 hi LineNr term=bold ctermfg=DarkGreen ctermbg=NONE 
 hi Normal guifg=White ctermfg=White
-" hi Comment ctermfg=DarkGrey cterm=italic 
 hi Statement ctermfg=DarkYellow
-set encoding=utf-8
 
-
+" Python indentation
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
@@ -27,4 +29,21 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
+
+" Plugins
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugins')
+Plug 'Valloric/YouCompleteMe'
+Plug 'tmhedberg/SimpylFold'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
+let g:ycm_server_python_interpreter = '/usr/bin/python'
 
