@@ -41,7 +41,6 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set softtabstop=2
     \ set shiftwidth=2
 
-
 " Plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -60,3 +59,6 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ale_python_flake8_options = '--max-line-length=120 --ignore=E701,E265'
+
+
