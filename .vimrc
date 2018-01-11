@@ -16,11 +16,10 @@ set foldlevel=99
 nnoremap <space> za
 
 " Themes
+let g:solarized_termtrans  = 1
+let g:solarized_termcolors = 256
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors = 256
-let g:solarized_termtrans  = 1
-hi SignColumn ctermbg=NONE
 hi LineNr term=bold ctermfg=DarkGreen ctermbg=NONE 
 hi Normal guifg=White ctermfg=White
 hi Statement ctermfg=DarkYellow
@@ -51,6 +50,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugins')
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tmhedberg/SimpylFold'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -60,4 +60,3 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
-
