@@ -59,6 +59,6 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
-let g:ale_python_flake8_options = '--max-line-length=120 --ignore=E701,E265'
+let g:ale_python_flake8_options = '--max-line-length=120 --ignore=E701,E116,E261,E262,E265'
 
 
