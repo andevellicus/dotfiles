@@ -55,6 +55,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-abolish'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
